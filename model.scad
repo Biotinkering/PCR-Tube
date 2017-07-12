@@ -77,6 +77,17 @@ module joint()
     cube([3.5, 3.2, 2.5], center=true);
 }
 
-body();
-lid();
-joint();
+//body();
+//lid();
+//joint();
+
+module tube()
+{
+    body();
+    lid();
+    joint(); 
+}
+    
+tube();
+
+//Volumen muß noch ausgerechnet werden 
