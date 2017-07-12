@@ -25,7 +25,7 @@ module lid()
     lid_surface();
 }
 
-module body(cutout=true)
+module body()
 {
     // top
     translate([0, 0, -body_top_height])
@@ -33,9 +33,7 @@ module body(cutout=true)
     difference()
     {
         circle(r=body_top_outer_radius);
-        if(cutout==true){
-            circle(r=body_top_inner_radius);
-            }
+        circle(r=body_top_inner_radius);
     }
 
     // center
@@ -44,7 +42,6 @@ module body(cutout=true)
     difference()
     {
         cylinder(r=body_center_radius, h=body_center_height);
-        if(cutout==true)
         cylinder(
             r=body_center_radius-material_thickness,
             h=body_center_height + nothing
@@ -61,7 +58,6 @@ module body(cutout=true)
             r1=body_cone_lower_radius,
             r2=body_cone_upper_radius
             );
-        if(cutout==true)
         cylinder(
             h=body_cone_height + nothing,
             r1=body_cone_lower_radius - material_thickness,
@@ -85,13 +81,13 @@ module joint()
 //lid();
 //joint();
 
-module tube(cutout=true)
+module tube()
 {
-    body(cutout);
+    body();
     lid();
     joint(); 
 }
     
-tube(cutout=true);
+tube();
 
 //Volumen muß noch ausgerechnet werden 
