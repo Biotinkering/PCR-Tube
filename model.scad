@@ -77,8 +77,8 @@ module body(cutout=true)
 
 module joint()
 {
-    translate([-lid_center_radius-1.75, 0, 0])
-    cube([3.5, 3.2, 2.5], center=true);
+    translate([-lid_center_radius - 1/2*joint_x, 0, 0])
+    cube([joint_x, joint_y, joint_z], center=true);
 }
 
 //body();

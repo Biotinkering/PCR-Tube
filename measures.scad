@@ -45,3 +45,8 @@ body_cone_lower_radius = body_cone_lower_diameter/2;
 
 // half sphere
 body_bottom_radius = 2;
+
+//lid joint
+joint_x = 3.5;
+joint_y = 3.2;
+joint_z = 2.5;
